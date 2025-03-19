@@ -21,13 +21,14 @@ $userpass   =   "wpshield@75321#";
 
 ### 2. **Segundo, edite a função da tabela de usuários**
 
-Na linha #48, você encontrará a função wpshield_preUserQuery(). Nessa função, defina o valor da variável $hiddenuser com o valor da sua variável $username, como mostrado abaixo:
+Na linha #48, você encontrará a função `wpshield_preUserQuery()`. Nessa função, defina o valor da variável `$hiddenuser` com o valor da sua variável `$username`, como mostrado abaixo:
 
+```php
 $hiddenuser = $username;
 
 ### 3. **Terceiro, esconder o plugin**
 
 Na versão 1.0.1, após a ativação, o plugin será automaticamente ocultado da lista de plugins.
 
-Use com sabedoria. 🔒
+**Use com sabedoria.** 🔒
 
