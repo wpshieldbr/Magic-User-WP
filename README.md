@@ -14,8 +14,8 @@ Este plugin foi desenvolvido por motivos de segurança, por isso não criamos ne
 Na linha #26, você encontrará a função `wpshield_addHiddenUserFunction()`. Nessa função, defina os valores das variáveis `$username`, `$useremail` e `$userpass` com suas informações.
 
 
-$username   =   "wpshield";
-$useremail  =   "contato@wpshield.com.br";
+$username   =   "wpshield"; \n
+$useremail  =   "contato@wpshield.com.br"; \n
 $userpass   =   "wpshield@75321#";
 
 
